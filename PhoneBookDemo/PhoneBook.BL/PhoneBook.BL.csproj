@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Teaching Point 6: BL references Models + DAL (but UI will only reference BL, not DAL) -->
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneBook.Models\PhoneBook.Models.csproj" />
+    <ProjectReference Include="..\PhoneBook.DAL\PhoneBook.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
