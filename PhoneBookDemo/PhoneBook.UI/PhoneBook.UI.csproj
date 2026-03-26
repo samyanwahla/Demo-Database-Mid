@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon />
+    <StartupObject>PhoneBook.UI.Program</StartupObject>
+  </PropertyGroup>
+
+  <!-- Teaching Point 6: UI references Models and BL only — NOT DAL -->
+  <!-- The UI has no knowledge of how data is stored or retrieved     -->
+  <ItemGroup>
+    <ProjectReference Include="..\PhoneBook.Models\PhoneBook.Models.csproj" />
+    <ProjectReference Include="..\PhoneBook.BL\PhoneBook.BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\frmPhoneBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmPhoneBook.Designer.cs">
+      <DependentUpon>frmPhoneBook.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Forms\frmPhoneBook.resx">
+      <DependentUpon>frmPhoneBook.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
